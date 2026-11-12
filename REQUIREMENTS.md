@@ -10,7 +10,7 @@ Last updated: 2026-11-12.
 
 The product is a single interactive web page for the 30th anniversary of «Евросервис». Employees and other visitors with the URL will view a group collage and discover each person's first and last name by interacting with the portrait.
 
-The final page is intended to be publicly accessible by URL. The user authorized the safe public push and GitHub Pages publication of the current prototype on 2026-11-12. This authorization does not mean that the prototype satisfies the final acceptance criteria below.
+The current prototype was published through GitHub Pages on 2026-11-12 at <https://aveann9.github.io/eu.service30years/>. This prototype publication does not mean that the page satisfies the final acceptance criteria below.
 
 ## Confirmed first-version scope
 
@@ -91,7 +91,7 @@ The existing code and assets are preserved as a prototype:
 - Desktop hover and keyboard focus expose labels; coarse-pointer clicks/taps toggle the active label.
 - The prototype does not provide a label close button.
 - Source and distribution HTML now request `noindex, nofollow`.
-- A GitHub Pages workflow is included in the clean public repository; activation and its first successful run require separate verification in GitHub.
+- A GitHub Pages workflow is included in the clean public repository and completed its first successful deployment on 2026-11-12.
 - The current visual styling remains provisional. The eyebrow, heading, descriptive text, and orientation-note copy listed above are confirmed.
 - No fresh browser acceptance pass has been completed against all requirements in this document.
 
@@ -102,7 +102,7 @@ These are known implementation gaps, not unresolved product decisions.
 - The current page can remain a working visual basis for discussion.
 - The current light page, typography, colors, spacing, and composition may change after visual review.
 - Files in `Фото/` may become useful later, but no first-version feature depends on them.
-- GitHub Pages is the selected hosting provider. Its activation, first workflow result, and public URL require verification in GitHub.
+- GitHub Pages is the selected hosting provider. The current public URL is <https://aveann9.github.io/eu.service30years/>.
 
 None of these hypotheses is an approved design or feature requirement.
 
@@ -119,7 +119,7 @@ None of these hypotheses is an approved design or feature requirement.
 - Exact final hotspot geometry and label anchors after the collage is stable.
 - Whether individual files in `Фото/` will ever become part of the page.
 - Approved visual design and any remaining interface copy not explicitly confirmed above.
-- GitHub Pages activation result, first workflow result, public URL, and optional custom domain.
+- Optional custom domain and any future release-specific verification.
 - Final image format and compression after visual edits are complete.
 
 These unknowns do not block documentation, the static technical foundation, or the user-authorized prototype publication. They do block final hotspot acceptance and final visual approval.

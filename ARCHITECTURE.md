@@ -53,7 +53,7 @@ The recommendation was checked against current official documentation on 2026-11
 - [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) for keyboard access, visible focus, orientation, contrast, and target-size considerations.
 - [Google Search Central: noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing) for preventing supported search engines from indexing the page. The directive must be visible to a crawler and must not be hidden behind a blocking `robots.txt` rule.
 
-GitHub Pages was selected as the hosting provider on 2026-11-12. The user authorized the safe public push and prototype publication; activation and the first successful deployment still require verification in GitHub.
+GitHub Pages was selected as the hosting provider on 2026-11-12. The workflow completed its first successful deployment, and the prototype is available at <https://aveann9.github.io/eu.service30years/>.
 
 ## Current file organization
 
@@ -144,7 +144,7 @@ The active yacht image and its hotspot geometry are coupled; any future image re
 
 The site needs only static-file hosting. GitHub Pages is the selected provider and should use the repository's standard free `github.io` URL unless the user later chooses a custom domain. A minimal GitHub Actions workflow is included in the public repository. It checks out the repository, prepares a two-file public artifact from `dist`, and deploys that artifact through the standard `github-pages` environment. It uses the workflow's scoped `GITHUB_TOKEN` permissions and does not require user-managed secrets.
 
-The public `main` branch uses a clean history containing only approved repository files. The complete working history and private assets remain separate locally. Future public updates must preserve this separation. Enabling Pages, verifying caching, documenting rollback, and recording the final URL remain separate release actions.
+The public `main` branch uses a clean history containing only approved repository files. The complete working history and private assets remain separate locally. Future public updates must preserve this separation. The workflow deploys the site to <https://aveann9.github.io/eu.service30years/>. Verifying caching and documenting rollback remain future release actions.
 
 Before treating a deployment as the final first-version release:
 

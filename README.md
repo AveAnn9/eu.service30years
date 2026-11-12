@@ -15,7 +15,7 @@ The project is in documentation and content-preparation stage.
 - The primary collage has 30 provisional hover/focus zones; final name-to-face confirmation is still pending.
 - The current 30 provisional hotspots must be confirmed against the final people and names.
 - The visual concept is provisional.
-- The user authorized the safe public push and GitHub Pages publication of the current prototype on 2026-11-12.
+- The current prototype was published through GitHub Pages on 2026-11-12 at <https://aveann9.github.io/eu.service30years/>.
 
 ## Documentation
 
@@ -42,7 +42,7 @@ The public repository uses a clean `main` history containing only approved repos
 
 The authorized and designated GitHub repository is [AveAnn9/eu.service30years](https://github.com/AveAnn9/eu.service30years). Access through the connected `AveAnn9` account was verified on 2026-11-11 with read and write permissions. Unless the user names another repository, future GitHub instructions for this project refer to this repository. Repository access does not replace the explicit confirmation required for commits, pushes, publication, or other remote changes under [AGENTS.md](AGENTS.md).
 
-The GitHub repository was made public on 2026-11-12 at the user's explicit request. The Pages workflow is included; activation and the first successful deployment are verified separately in GitHub.
+The GitHub repository was made public on 2026-11-12 at the user's explicit request. The Pages workflow completed its first successful deployment on the same date.
 
 The `dist/` directory remains version-controlled because it is currently the project's static web root rather than generated build output. Lock files and safe example environment files are not ignored.
 
@@ -70,7 +70,7 @@ The static server workflow was previously used successfully for browser preview.
 - Installed dependencies: none.
 - Automated tests: Python standard-library `unittest` checks the active image, one visible portrait, 30 unique records, in-bounds hotspot geometry, matching source/distribution HTML, the `noindex` directive, and the minimal Pages workflow.
 - Formatter, linter, and type checker: none.
-- Publication: the release-safe repository and workflow are prepared; GitHub Pages activation and the first successful deployment still require verification in GitHub.
+- Publication: the release-safe repository is live through GitHub Pages at <https://aveann9.github.io/eu.service30years/>.
 
 Do not invent or report unavailable commands. Required future checks are defined in `ARCHITECTURE.md` and the acceptance criteria in `REQUIREMENTS.md`.
 

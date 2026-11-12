@@ -1,0 +1,61 @@
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets and local environment values
+.env
+.env.*
+!.env.example
+!.env.*.example
+.envrc
+.direnv/
+secrets/
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local editor and IDE settings
+.idea/
+.vscode/
+.fleet/
+*.code-workspace
+*.sublime-workspace
+*.sublime-project
+
+# Dependencies and local virtual environments
+node_modules/
+vendor/
+.venv/
+venv/
+
+# Generated build, test, and cache output
+# dist/ is intentionally tracked because it is the current static web root,
+# not an automatically generated build directory in this project.
+build/
+out/
+.output/
+.next/
+.nuxt/
+.svelte-kit/
+.astro/
+coverage/
+.nyc_output/
+.cache/
+.parcel-cache/
+.vite/
+__pycache__/
+*.py[cod]
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.tmp/
+tmp/

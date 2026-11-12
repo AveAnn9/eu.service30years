@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Евросервис · Команда на борту</title>
+  <meta name="description" content="Интерактивный командный портрет Евросервиса." />
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root {
+      --ink: #10233f;
+      --muted: #62718a;
+      --line: rgba(15, 39, 69, .12);
+      --gold: #c89b53;
+      --paper: #f4f7fb;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .shell { width: min(1220px, calc(100% - 40px)); margin: 0 auto; }
+    .hero { padding: 34px 0 22px; }
+    .eyebrow {
+      margin: 0 0 20px; color: var(--gold); font-size: 11px; font-weight: 800;
+      letter-spacing: .18em; text-transform: uppercase;
+    }
+    h1 {
+      margin: 0; font-size: clamp(28px, 7vw, 92px); line-height: .93;
+      letter-spacing: -.04em; font-weight: 760;
+    }
+    .title-line { display: block; white-space: nowrap; }
+    .intro { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-top: 22px; }
+    .intro p { max-width: 460px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+    .counter { flex: 0 0 auto; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .counter span { color: var(--gold); }
+
+    .portrait-frame {
+      position: relative; overflow: hidden; margin: 26px auto 20px; border: 1px solid rgba(15,39,69,.16);
+      border-radius: 24px; background: #dfe7f0; box-shadow: 0 25px 70px rgba(16,35,63,.16);
+    }
+    .portrait-frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; border: 1px solid rgba(255,255,255,.48); border-radius: inherit; }
+    .portrait-frame svg { display: block; width: 100%; height: auto; }
+    .portrait-frame image { pointer-events: none; }
+    .hotspot { cursor: pointer; outline: none; }
+    .hotspot ellipse, .hotspot circle { fill: rgba(255,255,255,0); stroke: rgba(255,255,255,0); stroke-width: 2; transition: fill .22s ease, stroke .22s ease, filter .22s ease; }
+    .hotspot:hover ellipse, .hotspot:hover circle, .hotspot:focus ellipse, .hotspot:focus circle, .hotspot.active ellipse, .hotspot.active circle {
+      fill: rgba(255,255,255,.09); stroke: rgba(255,255,255,.86); filter: drop-shadow(0 0 8px rgba(255,255,255,.45));
+    }
+    .hotspot .tag { opacity: 0; transition: opacity .18s ease; }
+    .hotspot:hover .tag, .hotspot:focus .tag, .hotspot.active .tag { opacity: 1; }
+    .tag { font: 800 15px Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: -.01em; }
+    .tag text { fill: #fff; }
+    .tag-bg { fill: #10233f; stroke: rgba(255,255,255,.72); stroke-width: 1.5; }
+    .tag-dot { fill: var(--gold); }
+    .orientation-hint {
+      display: none; margin: 0 0 12px; color: var(--muted); font-size: 14px; line-height: 1.45;
+    }
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 24px, 1220px); }
+      .hero { padding-top: 24px; }
+      .intro { display: block; }
+      .counter { margin-top: 14px; }
+      .portrait-frame { border-radius: 15px; margin-top: 18px; }
+      .tag { font-size: 18px; }
+    }
+    @media (max-width: 1024px), (hover: none), (pointer: coarse) {
+      .orientation-hint { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Евросервис · командный портрет</p>
+      <h1 id="page-title"><span class="title-line">Люди,</span><span class="title-line">которые держат курс</span></h1>
+      <div class="intro">
+        <p>Коллаж сотрудников московского отдела продаж ко дню рождения компании Евросервис</p>
+        <div class="counter"><span>30</span> человек на борту</div>
+      </div>
+    </section>
+
+    <p class="orientation-hint" role="note">Поверните устройство горизонтально — так изображение будет лучше видно, а выбирать людей будет удобнее.</p>
+
+    <section class="portrait-frame" aria-label="Интерактивный командный портрет">
+      <svg viewBox="0 0 1586 992" role="img" aria-labelledby="portrait-title portrait-desc">
+        <title id="portrait-title">Командный портрет Евросервиса на яхте</title>
+        <desc id="portrait-desc">Наведите на человека, чтобы увидеть его имя.</desc>
+        <image href="assets/collage-yacht-v7.png" width="1586" height="992" preserveAspectRatio="xMidYMid slice" />
+        <g id="hotspots" aria-label="Участники команды"></g>
+      </svg>
+    </section>
+
+  </main>
+
+  <script>
+    // Temporary first-name labels; replace only name values when final names are approved.
+    const people = [
+      ["Алена", 150, 228, 62, 128], ["Анна", 280, 230, 60, 126], ["Баланс", 390, 230, 60, 126], ["Валентина", 495, 242, 58, 122], ["Вера", 582, 232, 58, 126],
+      ["Виктория", 915, 292, 58, 125], ["Дарья", 1053, 275, 62, 124], ["Джейн", 1172, 292, 62, 124], ["Елена", 1296, 295, 62, 124], ["Злата", 1422, 285, 65, 128],
+      ["Ксения", 150, 535, 68, 130], ["Лиза", 287, 535, 62, 130], ["Марина", 399, 548, 62, 132], ["Мила", 490, 536, 65, 132], ["Наталья Васильевна", 590, 532, 62, 130],
+      ["Светлана", 957, 536, 65, 135], ["Артем", 1046, 548, 45, 85], ["Валерия", 1199, 542, 62, 125], ["Людмила", 1354, 548, 62, 132], ["Наталья", 1493, 544, 60, 125],
+      ["Катя", 116, 830, 72, 145], ["Ольга", 262, 825, 62, 128], ["Полина", 394, 833, 62, 130], ["Алина", 510, 836, 68, 138],
+      ["София", 807, 830, 60, 130], ["Тина", 920, 838, 58, 135], ["Директор", 1072, 810, 75, 150], ["Жена директора", 1248, 820, 76, 148], ["Юлия", 1407, 835, 60, 135], ["Яна", 1522, 830, 60, 132]
+    ];
+    const NS = "http://www.w3.org/2000/svg";
+    const VIEWBOX_WIDTH = 1586;
+    const layer = document.querySelector('#hotspots');
+    let active = null;
+    const safe = (value) => value.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[ch]));
+    function makeHotspot([name, cx, cy, rx, ry], index) {
+      const g = document.createElementNS(NS, 'g');
+      g.classList.add('hotspot'); g.setAttribute('tabindex', '0'); g.setAttribute('role', 'button'); g.setAttribute('aria-label', name); g.dataset.index = index;
+      const shape = document.createElementNS(NS, 'ellipse'); shape.setAttribute('cx', cx); shape.setAttribute('cy', cy); shape.setAttribute('rx', rx); shape.setAttribute('ry', ry); g.appendChild(shape);
+      const width = Math.max(106, name.length * 10 + 44); const tagY = Math.max(50, cy - ry - 22); const tagX = Math.min(VIEWBOX_WIDTH - width - 10, Math.max(10, cx - width / 2));
+      const group = document.createElementNS(NS, 'g'); group.classList.add('tag'); group.setAttribute('transform', `translate(${tagX} ${tagY})`);
+      const rect = document.createElementNS(NS, 'rect'); rect.classList.add('tag-bg'); rect.setAttribute('width', width); rect.setAttribute('height', 38); rect.setAttribute('rx', 19); group.appendChild(rect);
+      const dot = document.createElementNS(NS, 'circle'); dot.classList.add('tag-dot'); dot.setAttribute('cx', 17); dot.setAttribute('cy', 19); dot.setAttribute('r', 4); group.appendChild(dot);
+      const text = document.createElementNS(NS, 'text'); text.setAttribute('x', 29); text.setAttribute('y', 24); text.textContent = name; group.appendChild(text); g.appendChild(group);
+      const toggle = () => { if (active && active !== g) active.classList.remove('active'); active = active === g ? null : g; g.classList.toggle('active', active === g); };
+      g.addEventListener('click', (e) => { if (e.detail === 0 || window.matchMedia('(hover: none), (pointer: coarse)').matches) toggle(); });
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+      return g;
+    }
+    people.forEach((person, index) => layer.appendChild(makeHotspot(person, index)));
+  </script>
+</body>
+</html>
